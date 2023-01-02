@@ -17,9 +17,7 @@ class BlackJackGame {
             this.deck = this.createDeck();
             this.playerHand = this.dealCards(2);
             this.dealerHand = this.dealCards(1);
-            let playerResult = await this.playerTurn();
             this.dealerHand.push(this.dealCards(1)[0]);
-            let dealerResult = await this.dealerTurn();
             let winner = this.compareResults();
             if (winner === 'blackjack') {
                 startingWallet += (BET_AMOUNT * 1.5).toFixed(2);
